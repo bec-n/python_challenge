@@ -58,3 +58,9 @@ print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_in
 print(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
 
 # Print the results in text 
+output_path = os.path.join("analysis", "analysis.txt")
+ouput_text_results = f"Financial Analysis\n-----------------------------\nTotal Months: {total_months}\nTotal: ${total_profit}\nAverage Change: ${round(average_profit_change, 2)}\nGreatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})\nGreatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})"
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path,'w') as output_text:
+    output_text.write(ouput_text_results) 
