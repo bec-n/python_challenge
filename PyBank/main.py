@@ -63,4 +63,4 @@ ouput_text_results = f"Financial Analysis\n-----------------------------\nTotal 
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path,'w') as output_text:
-    output_text.write(ouput_text_results) 
+    output_text.write(output_path) 

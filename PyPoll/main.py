@@ -33,10 +33,18 @@ with open(csvpath, encoding='utf') as csvfile:
         else:
             candidates[candidate] = 1
 
+# Count votes for each candidate and % votes
+for candidate in candidates:
+
+    votes = candidates[candidate]
+    percentage = (votes/total_votes)*100
+    candidates[candidate] = [votes, percentage]
+
 # Print the results in terminal 
 print("Election Results")
 print("-------------------------")
-print(f"Total Months: {total_votes}")
+print(f"Total Votes: {total_votes}")
 print("-------------------------")
 for candidate in candidates:
-    print(f"{candidate}:")
+    votes, percentage = candidates[candidate]
+    print(f"{candidate}: {percentage:.2f}%")
