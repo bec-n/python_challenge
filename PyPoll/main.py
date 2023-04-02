@@ -24,12 +24,19 @@ with open(csvpath, encoding='utf') as csvfile:
         # Calculate total number of months 
         total_votes += 1
 
-        
+        # Obtain first candidate name in the third column
+        candidate = row[2]
 
+        # Check if candidate in dictionary list and increment votes 
+        if candidate in candidates:
+            candidates[candidate] += 1
+        else:
+            candidates[candidate] = 1
 
-        
 # Print the results in terminal 
 print("Election Results")
 print("-------------------------")
 print(f"Total Months: {total_votes}")
 print("-------------------------")
+for candidate in candidates:
+    print(f"{candidate}:")
